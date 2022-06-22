@@ -5,16 +5,20 @@ const EventEmitter = require('events');
 const Logger = require("./logger");
 const logger = new Logger();
 
+const Exercisi = require("./exercisi-1");
+const exercisi = new Exercisi();
+
+console.log(exercisi.iterative());
+
 // Listener
-logger.on('messageLogged',(arg) => { // e, eventArg
+/* logger.on('messageLogged',(arg) => { // e, eventArg
     console.log('Listener', arg);
-})
+})*/
 
 //constlog = require('./logger');
 
-//log('message')
+//log('message') logger.log('message');
 
-logger.log('message');
 
 /*
 //const files = fs.readdirSync('./');
