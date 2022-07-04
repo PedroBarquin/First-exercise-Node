@@ -1,32 +1,38 @@
 
 // Exercici 1: Crea una funció que mostri per consola el nom d'usuari/ària en invocar-la
-showName(name){
+function showName(name) {
     console.log(name);
 }
 
 // Exercici 2: Mostra per consola el nom i cognoms de l'usuari/ària mitjançant template literals,
 
-showLiterals(name, surname){
+function showLiterals(name, surname){
     var nameIntroduced = name;
     var surnameIntroduced = surname;
     console.log(`Your name is ${nameIntroduced} and your surname is ${surnameIntroduced}`);
 }
 
-returnValue(value){
+function returnValue(value){
     console.log(value.raw[0]);
 }
 
-iterative(){
-    var filledArray = new Array(10);
-    var emptyArray = [];
-    for(i = 0; i < 10; i++){
-        filledArray[filledArray.length] = i;
-        emptyArray[emptyArray.length] = getFunct(i);
+function iterative(){
+    //var filledArray = new Array(10);
+    var emptyArray = new Array(10);
+    for(i = 0; i < emptyArray.length; i++){
+        emptyArray[i] = new Array(10).fill(getFunct());
     }
 }
+function getFunct() {
+    return
+        for(i = 0; i < 10; i++){
+            [i] = i;
+           console.log(i);
+        }
 
-getFunct(val){
-    return function() {return console.log(val);};
 }
-   //module.exports = Exercisi1;
-}
+module.exports.showName = showName;
+module.exports.showLiterals = showLiterals;
+module.exports.returnValue = returnValue;
+module.exports.iterative = iterative;
+module.exports.getFunct = getFunct;

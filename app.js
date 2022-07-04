@@ -6,11 +6,20 @@ const Logger = require("./logger");
 const logger = new Logger();
 
 const Exercisi = require("./exercisi-1");
-const exercisi = new Exercisi();
+const Exercisi2 = require("./exercisi-2");
+const {Persona} = require("./exercisi-2");
 
-console.log(exercisi.iterative());
+console.log(Exercisi.iterative());
 
-// Listener
+const nom1 = "Pedro";
+const nom2 = "Maria";
+console.log(Exercisi2.sumaNoms(nom1, nom2));
+
+const pepe = new Persona(nom1);
+console.log(pepe.dirNom());
+
+// Listener const Exercisi = require("./exercisi-1");
+// const exercisi = new Exercisi();
 /* logger.on('messageLogged',(arg) => { // e, eventArg
     console.log('Listener', arg);
 })*/
