@@ -30,7 +30,7 @@
  // Crea una arrow function que rebi un paràmetre i una funció callback i li passi a la funció un missatge o un altre
  // (que s'imprimirà per consola) en funció del paràmetre rebut.
 
- let invocada = mes => console.log(`Ara estic invocant, ${mes}`);
+const invocada = (n) => console.log(`Ara estic invocant, ${n}`);
  funcioDos = (name, callback) => {
      const nom = `${name}`;
      callback(nom)
