@@ -72,6 +72,22 @@ async function myMeeting(){
 }
 myMeeting();
 
+
+// Ej 3.2. apuntes sucios
+// Ó
+/*const invocada = (n) => {return `Te llamas ${n}`};
+const funcioDos = (name, callback) =>{
+    new Promise((resolve, reject) => {
+        const result = callback(name);
+        resolve (result);
+    })
+        .then(res => {
+            console.log(res);
+        })
+
+}*/
+
+
 /* Libro Node
 const http = require('http')
 const hostname = '127.0.0.1'
@@ -84,3 +100,45 @@ const server = http.createServer((req, res) => {
 server.listen(port, hostname, () => {
     console.log(`Server running at http://${hostname}:${port}/`)
 })*/
+
+
+
+// Apuntes sucios Ej 3 parte 3 creo resolución en realidad es obj + {...values, ...values}
+//getBoth(3).then(val => console.log(val.name, val.salary));
+
+/*
+
+callback(getEmployee(id), getSalary(id))
+     [callback.name, callback.salary]
+     .then((() => {
+         console.log(`És diu ${getEmployee(id)} i el seu salari és ${getSalary(id)}`);
+     }));
+
+
+ return new Promise((resolve,reject) => {
+         let employee1 = getEmployee(id);
+         let salary1 = getSalary(id);
+         resolve(employee1, salary1);
+         if(true){
+             let combinedResult = {name: employee1.name, salary: salary1.salary};
+             resolve(combinedResult);
+             console.log(\`El nom és ${combinedResult.name} i el salari és ${combinedResult.salary} \`)
+         } else {
+             reject(onmessageerror(\`Rejected ${id}\`))
+         }
+     })
+
+employee
+    .then(getEmployee(1))
+    .then(res => {
+        console.log(res)
+    })
+    .catch(err => {
+        console.log(err.message);
+    })
+ console.log(getEmployee(1));
+  for(i = 0; i < employees.id.length ; i++){
+         if(employees.id === salaries.id){
+             return this.employees
+         }
+     } return new Promise(() => {})*/

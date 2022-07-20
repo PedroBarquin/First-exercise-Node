@@ -9,6 +9,7 @@ const writeToFile = (path, text) => {
 }
 
 console.log(writeToFile('test.txt','test'));
+
 // Created Output.txt && test.txt as tests
 
 // N1 Ex.2. Crea una altra funció que mostri per consola el contingut del fitxer de l'exercici anterior.

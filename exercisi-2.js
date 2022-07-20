@@ -15,7 +15,6 @@ creaObj = (valor) => {
 
 class Persona{
     constructor(nom){
-        nom;
         this.nom = nom;
     }
     dirNom(){
