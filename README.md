@@ -1,2 +1,2 @@
-# first-app-node
+# First exercise
 first app for node
