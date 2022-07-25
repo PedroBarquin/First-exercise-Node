@@ -11,3 +11,21 @@ const getBoth = async (id) => {
                 console.log(`${result1.name} is paid ${result2.salary}`)
 };
 getBoth(1);
+
+// - Exercici 2
+// Crea una nova funció asíncrona que cridi a una altra que retorni
+// una Promise que efectuï la seva funció resolve() després de 2 segons de la seva invocació.
+
+function slowPromise() {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve(`I am resolved`);
+            }, 2000);
+    });
+}
+async function asyncFunc() {
+    console.log('first call');
+    const result = await slowPromise();
+    console.log(result);
+}
+asyncFunc();
