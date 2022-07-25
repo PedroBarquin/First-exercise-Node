@@ -53,7 +53,7 @@ const invocada = (n) => {return `Te llamas ${n}`}
      return new Promise((resolve, reject) => {
          const employeeFound = employees.find(e => e.id === id);
          if (employeeFound !== undefined) {
-             resolve(`El nom de la id ${id} és ${employeeFound.name}`);
+             resolve(employeeFound);
          } else {
              reject(onmessageerror(`Error`));
          }
@@ -68,7 +68,7 @@ const invocada = (n) => {return `Te llamas ${n}`}
      return new Promise((resolve, reject) => {
          const salary = salaries.find(e => e.id === id);
          salary !== undefined
-             ? resolve(`El salari de la id ${id} és ${salary.salary}`)
+             ? resolve(salary)
              :  reject(onmessageerror(`Rejected ${id}`));
      })
  }
@@ -89,4 +89,8 @@ const invocada = (n) => {return `Te llamas ${n}`}
          )
      };
 
+ module.exports.getEmployee = getEmployee;
+ module.exports.getSalary = getSalary;
+ module.exports.salaries = salaries;
+ module.exports.employees = employees;
 console.log(getBoth(3));
