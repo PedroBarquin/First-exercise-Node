@@ -3,15 +3,22 @@
  // Exercici 1: Crea una funció que retorni una Promise que invoqui la funció resolve() o reject() que rep.
  // Invoca-la passant-li les dues funcions de manera que imprimeixin un missatge diferent depenent de si la Promise es resol o no.
 
- const funcioUna = new Promise((resolve,reject) => {
-     if(true){
-         resolve(`I am resolved`);
-     } else if (reject){
-         reject(new Error('Error'));
-         console.log(`I was rejected :(`);
-     }
- })
+ const funcioUna =
+    new Promise((resolve,reject) => {
+        let condition = true;
+        if(condition){
+            resolve('Promise resolved')
+        } else {
+            reject('Promise rejected')
+        }
 
+    })/*.catch(() => {
+            console.log('Error')
+        })*/;
+
+ funcioUna.then((message) => {
+     console.log(message);
+ })
  // Crea una arrow function que rebi un paràmetre i una funció callback i li passi a la funció un missatge o un altre
  // (que s'imprimirà per consola) en funció del paràmetre rebut.
 
