@@ -22,12 +22,12 @@
  // Crea una arrow function que rebi un paràmetre i una funció callback i li passi a la funció un missatge o un altre
  // (que s'imprimirà per consola) en funció del paràmetre rebut.
 
-const invocada = (n) => {return `Te llamas ${n}`}
+const invocada = (n) => {if(typeof n == "string"){ return 'sóc string'} else { return 'no sóc string'}}
     // Testeo console.log(`Ara estic invocant, ${n}`);
  funcioDos = (name, callback) => {
      return callback(name);
  }
- funcioDos('Rebo un param', invocada)
+ console.log(funcioDos('test', invocada))
 
 //Ex N.2.1 Donats els objectes employees i salaries, crea una arrow function getEmployee()
  // que retorni una Promise efectuant la cerca en l'objecte pel seu id.

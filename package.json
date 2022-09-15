@@ -20,6 +20,10 @@
   },
   "homepage": "https://github.com/PedroBarquin/first-app-node#readme",
   "dependencies": {
-    "compressing": "^1.6.2"
+    "compressing": "^1.6.2",
+    "compression": "^1.7.4"
+  },
+  "devDependencies": {
+    "jest": "^29.0.3"
   }
 }
