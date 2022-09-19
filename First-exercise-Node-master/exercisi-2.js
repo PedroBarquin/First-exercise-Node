@@ -25,3 +25,4 @@ class Persona{
 }
 module.exports.sumaNoms = sumaNoms;
 module.exports.Persona = Persona;
+//test
