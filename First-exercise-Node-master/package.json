@@ -1,0 +1,29 @@
+{
+  "name": "first-app-json",
+  "version": "1.0.0",
+  "description": "first app json file",
+  "main": "app.js",
+  "scripts": {
+    "test": "firstest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PedroBarquin/first-app-node.git"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "Pedro Barquin",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/PedroBarquin/first-app-node/issues"
+  },
+  "homepage": "https://github.com/PedroBarquin/first-app-node#readme",
+  "dependencies": {
+    "compressing": "^1.6.2",
+    "compression": "^1.7.4"
+  },
+  "devDependencies": {
+    "jest": "^29.0.3"
+  }
+}
