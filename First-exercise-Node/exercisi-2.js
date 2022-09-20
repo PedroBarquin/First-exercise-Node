@@ -1,9 +1,9 @@
 // Nivell 1: Exercisi 1: Mostra per la consola el resultat d'una arrow function autoinvocable que sumi dos nombres.
 
-sumaNoms = (nom1, nom2) => {
-    return `${nom1} ${nom2}`;
-}
-console.log(sumaNoms('Pedro', 'Barquin'))
+
+// Correcció ? :
+
+console.log(((value1,value2) => {value1 + value2})(4,8))
 
 
 // Nivell 2: Exercisi 1: Crea una arrow function que, rebent un paràmetre, retorni un objecte amb un atribut que tingui com a valor el paràmetre rebut.
@@ -19,10 +19,33 @@ class Persona{
         this.nom = nom;
     }
     dirNom(){
-        console.log(`El nomm és: ${this.name}`);
+        return console.log(`El nom és: ${this.nom}`);
     }
 
 }
-module.exports.sumaNoms = sumaNoms;
-module.exports.Persona = Persona;
-//test
+
+const nomTest = new Persona('Juanito');
+nomTest.dirNom();
+
+// Nivell 3: Escriu una function creadora d'objectes que faci instàncies d'una classe abstracta. Invoca-la amb diferents definicions.
+
+class Coche {
+    constructor(coche){
+        this.coche = coche;
+    }
+    cocheModelo(){
+        console.log(`El coche es un ${this.coche}`)
+    }
+}
+
+nuevoCoche = (modelo) => {
+    let cocheNuevo = Object.create(Coche.prototype);
+    cocheNuevo.coche = modelo
+    return cocheNuevo
+}
+
+let ford = nuevoCoche('Ford');
+let tesla = nuevoCoche('Tesla');
+
+ford.cocheModelo();
+tesla.cocheModelo();
