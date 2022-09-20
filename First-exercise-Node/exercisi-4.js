@@ -2,14 +2,24 @@
 // Crea una funció asíncrona que rebi un id d'empleat/da i imprimeixi per pantalla el nom de l'empleat/da i el seu salari,
 // usant les funcions getEmployee() i getSalary() que has definit a la tasca anterior.
 
-const ex3 = require('./exercisi-3');
-const getBoth = async (id) => {
-                let employeeName = ex3.getEmployee(id).then((res) => {return res});
-                let employeeSalary = ex3.getSalary(id).then((res) => {return res});
-                const result1 = await employeeName;
-                const result2 = await employeeSalary;
-                console.log(`${result1.name} is paid ${result2.salary}`)
-};
+const getSalary = (id) => {
+    return new Promise((resolve, reject) => {
+        const salary = salaries.find(e => e.id === id);
+        salary 
+            ? resolve(`El salari de l'empleat és ${salary} .`)
+            :  reject(onmessageerror(`Rejected ${id}`));
+    })
+}
+
+async function getBoth(id){
+    try {
+        const employee = await getEmployee(id);
+        const salary = await getSalary(id);
+        console.log(`${employee} ${salary}`)
+    }catch(error){
+        console.log(`Error in function getBoth`)
+    }
+}
 getBoth(1);
 
 // - Exercici 2
@@ -19,13 +29,17 @@ getBoth(1);
 function slowPromise() {
     return new Promise(resolve => {
         setTimeout(() => {
-            resolve(`I am resolved`);
+            resolve(`I am resolved after two seconds`);
             }, 2000);
     });
 }
 async function asyncFunc() {
-    console.log('first call');
-    const result = await slowPromise();
-    console.log(result);
+    try{
+        const res = await slowPromise();
+        console.log(res);
+    } catch(error){
+        console.log(`Error in function asyncFunc`)
+    }
+  
 }
 asyncFunc();
